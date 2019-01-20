@@ -1,11 +1,15 @@
 # API Collector
-As simple as it gets
-
-## Preparation
-tbd
+Find the right API at the right time.
 
 ## Usage Example
-tbd
+    import { APICollector, ITopicsAndAPIs } from "api-collector"
+
+    await aPICollector.addAPI("Crypto Currencies", "https://rest.coinapi.io/")
+
+    const result: await aPICollector.getApisForTopic("Crypto Currencies")
+
+    console.log(result)
+    
 
 ## Feedback
 If you find any issues or want to share improvement proposals in general feel free to open an issue [here](https://github.com/michael-spengler/api-collector/issues).

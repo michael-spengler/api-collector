@@ -7,12 +7,18 @@ describe("APICollector", () => {
         aPICollector = new APICollector()
     })
 
-    it("add and provide", () => {
-        aPICollector.addAPI("Crypto Currencies", "tbd")
-        expect(aPICollector.getApisForTopic("Crypto Currencies"))
+    it("add and provide", async () => {
+        await aPICollector.addAPI("Crypto Currencies", "https://rest.coinapi.io/")
+        expect(await aPICollector.getApisForTopic("Crypto Currencies"))
             .toEqual({
-                apis: ["tbd"],
+                apis: ["https://rest.coinapi.io/"],
                 topic: "Crypto Currencies",
             })
+    })
+
+    it("delivers undefined when no entry found for topic", async () => {
+        await aPICollector.addAPI("Crypto Currencies", "https://rest.coinapi.io/")
+        expect(await aPICollector.getApisForTopic("xyz"))
+            .toEqual(undefined)
     })
 })
