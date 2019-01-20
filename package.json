@@ -7,7 +7,7 @@
     "test": "jest",
     "test:cov": "jest --coverage",
     "tslint": "tslint -p ./",
-    "build-and-publish": "tsc && npm publish"
+    "bp": "tsc && npm publish"
   },
   "repository": {
     "type": "git",
